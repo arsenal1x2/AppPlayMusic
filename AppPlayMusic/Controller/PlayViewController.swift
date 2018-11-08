@@ -10,26 +10,30 @@ import UIKit
 
 class PlayViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var imgSong: UIImageView!
+    @IBOutlet weak var avartaImageView: UIImageView!
 
-        // Do any additional setup after loading the view.
+    override func viewDidLoad() {
+        setupViews()
+        super.viewDidLoad()
+    }
+    func setupImageView() {
+        avartaImageView.layer.cornerRadius = 0.5 * avartaImageView.frame.width
+        avartaImageView.clipsToBounds = true
+        imgSong.layer.cornerRadius = 0.5 * imgSong.frame.width
+        imgSong.clipsToBounds = true
+    }
+    func setupViews() {
+
+         setupImageView()
     }
 
+    @IBAction func clickBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

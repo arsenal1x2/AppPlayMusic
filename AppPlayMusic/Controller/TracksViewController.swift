@@ -10,8 +10,17 @@ import UIKit
 
 class TracksViewController: UIViewController {
 
+    @IBOutlet weak var avartaImg: UIImageView!
+    @IBOutlet weak var trackTableView: UITableView!
+    var arrSong:[Song] = [Song]()
+
+
+    let cellTableViewID = "cellTable"
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+        setupTableView()
+        setupImageView()
 
         // Do any additional setup after loading the view.
     }
@@ -20,16 +29,43 @@ class TracksViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func loadData() {
+        let arrSongInit = [
+            Song(singer: "Sơn Tùng", name: "Cơn mưa ngang qua",time:"3:05"),
+            Song(singer: "Đan Trường", name: "Mãi mãi một tình yêu",time:"3:23"),
+            Song(singer: "Trương Thế Vinh", name: "Tình yêu hoa gió",time:"3:45"),
+            Song(singer: "The men", name: "Chờ em trong đêm",time:"2:01"),
+            Song(singer: "The men", name: "Chỉ yêu mình em",time:"4:02"),
+            Song(singer: "Nam Cường", name: "Khó",time:"1:58")
+        ]
+        arrSong = arrSongInit.sorted(by: { $0 < $1 })
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    func setupTableView() {
+        trackTableView.dataSource = self
+        trackTableView.delegate = self
+        trackTableView.register(UINib.init(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: cellTableViewID)
+
+    }
+    func setupImageView() {
+        avartaImg.layer.cornerRadius = avartaImg.frame.width * 0.5
+        avartaImg.clipsToBounds = true
+    }
+
+
+}
+extension TracksViewController:UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrSong.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = trackTableView.dequeueReusableCell(withIdentifier: cellTableViewID, for: indexPath) as! TrackTableViewCell
+        cell.nameSingLbl.text = arrSong[indexPath.row].singer
+        cell.nameSongLbl.text = arrSong[indexPath.row].name
+        cell.timeLbl.text = arrSong[indexPath.row].time
+        return cell
+    }
+
 
 }

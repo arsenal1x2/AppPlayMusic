@@ -10,6 +10,9 @@ import UIKit
 
 class TrackTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var nameSingLbl: UILabel!
+    @IBOutlet weak var nameSongLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +23,6 @@ class TrackTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }

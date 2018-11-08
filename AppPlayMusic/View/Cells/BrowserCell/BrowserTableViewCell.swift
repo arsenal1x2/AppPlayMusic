@@ -10,8 +10,13 @@ import UIKit
 
 class BrowserTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnGet: UIButton!
+    @IBOutlet weak var singerLbl: UILabel!
+    @IBOutlet weak var nameSongLbl: UILabel!
+    @IBOutlet weak var imgSong: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupViews()
         // Initialization code
     }
 
@@ -20,5 +25,8 @@ class BrowserTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    func setupViews(){
+       btnGet.layer.cornerRadius = 15.0
+       btnGet.clipsToBounds = true
+    }
 }
