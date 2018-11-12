@@ -15,6 +15,8 @@
 		253544BE21929EA600C3CE56 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253544BD21929EA600C3CE56 /* PlaylistViewController.swift */; };
 		253544C021929EB400C3CE56 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253544BF21929EB400C3CE56 /* BrowserViewController.swift */; };
 		253544C221929ECD00C3CE56 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253544C121929ECD00C3CE56 /* TracksViewController.swift */; };
+		2535BD84219989F200C0FE01 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2535BD83219989F200C0FE01 /* NavigationBar.xib */; };
+		2535BD8621998A1800C0FE01 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2535BD8521998A1800C0FE01 /* NavigationBar.swift */; };
 		255ACC822193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255ACC802193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.swift */; };
 		255ACC832193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255ACC812193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.xib */; };
 		255ACC892193C88600DB98FB /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255ACC872193C88600DB98FB /* PlaylistTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 		253544BD21929EA600C3CE56 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		253544BF21929EB400C3CE56 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		253544C121929ECD00C3CE56 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		2535BD83219989F200C0FE01 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		2535BD8521998A1800C0FE01 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		255ACC802193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		255ACC812193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		255ACC872193C88600DB98FB /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		253544C32192A4B400C3CE56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2535BD82219989D200C0FE01 /* NavigationBar */,
 				253544CD2192C13000C3CE56 /* Cells */,
 			);
 			path = View;
@@ -125,6 +130,15 @@
 				255ACC842193C84C00DB98FB /* PlaylistCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2535BD82219989D200C0FE01 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2535BD83219989F200C0FE01 /* NavigationBar.xib */,
+				2535BD8521998A1800C0FE01 /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		255ACC842193C84C00DB98FB /* PlaylistCell */ = {
@@ -246,6 +260,7 @@
 				255ACCA12193EF5200DB98FB /* BrowserTableViewCell.xib in Resources */,
 				253544AE21929D7500C3CE56 /* Main.storyboard in Resources */,
 				255ACC8A2193C88600DB98FB /* PlaylistTableViewCell.xib in Resources */,
+				2535BD84219989F200C0FE01 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +282,7 @@
 				255ACC892193C88600DB98FB /* PlaylistTableViewCell.swift in Sources */,
 				255ACC822193C58900DB98FB /* PlaylistCategoriesCollectionViewCell.swift in Sources */,
 				253544C021929EB400C3CE56 /* BrowserViewController.swift in Sources */,
+				2535BD8621998A1800C0FE01 /* NavigationBar.swift in Sources */,
 				253544BC21929E9500C3CE56 /* PlayViewController.swift in Sources */,
 				253544A921929D7500C3CE56 /* AppDelegate.swift in Sources */,
 			);

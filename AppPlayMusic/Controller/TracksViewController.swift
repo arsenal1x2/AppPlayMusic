@@ -10,7 +10,8 @@ import UIKit
 
 class TracksViewController: UIViewController {
 
-    @IBOutlet weak var avartaImg: UIImageView!
+
+    @IBOutlet weak var navigationbarView: NavigationBar!
     @IBOutlet weak var trackTableView: UITableView!
     var arrSong:[Song] = [Song]()
 
@@ -20,7 +21,7 @@ class TracksViewController: UIViewController {
         super.viewDidLoad()
         loadData()
         setupTableView()
-        setupImageView()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -47,10 +48,7 @@ class TracksViewController: UIViewController {
         trackTableView.register(UINib.init(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: cellTableViewID)
 
     }
-    func setupImageView() {
-        avartaImg.layer.cornerRadius = avartaImg.frame.width * 0.5
-        avartaImg.clipsToBounds = true
-    }
+
 
 
 }

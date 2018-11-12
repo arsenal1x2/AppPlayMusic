@@ -10,6 +10,7 @@ import UIKit
 
 class BrowserViewController: UIViewController {
 
+    @IBOutlet weak var navigationbarView: NavigationBar!
     @IBOutlet weak var songTableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var avartaImg: UIImageView!

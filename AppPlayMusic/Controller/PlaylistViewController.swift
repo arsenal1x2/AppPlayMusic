@@ -10,7 +10,8 @@ import UIKit
 
 class PlaylistViewController: UIViewController {
 
-    @IBOutlet weak var avartaImageView: UIImageView!
+
+    @IBOutlet weak var navigationbarView: NavigationBar!
     @IBOutlet weak var playlistTableView: UITableView!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     let cellCollectionViewID = "cellCollection"
@@ -47,9 +48,10 @@ class PlaylistViewController: UIViewController {
 
     }
     func setupViews() {
-        setupImageView()
+
         setupTableView()
         setupCollectioView()
+        navigationbarView.title.text = "Browser"
     }
     func setupCollectioView() {
         categoriesCollectionView.dataSource = self
@@ -64,10 +66,7 @@ class PlaylistViewController: UIViewController {
         playlistTableView.register(UINib.init(nibName: "PlaylistTableViewCell", bundle: nil), forCellReuseIdentifier: cellTableViewID)
         
     }
-    func setupImageView() {
-        avartaImageView.layer.cornerRadius = 0.5 * avartaImageView.frame.width
-        avartaImageView.clipsToBounds = true
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

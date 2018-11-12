@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar" customModule="AppPlayMusic" customModuleProvider="target">
+            <connections>
+                <outlet property="avartaImg" destination="LEv-vZ-Jq5" id="rdZ-ZG-a9N"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="LQP-qg-tNq"/>
+                <outlet property="title" destination="x82-KC-smD" id="8gp-Bl-LqY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p09-fx-E7K">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x82-KC-smD">
+                            <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsT-W7-2eR">
+                            <rect key="frame" x="157.5" y="0.0" width="157.5" height="64"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sontung" translatesAutoresizingMaskIntoConstraints="NO" id="LEv-vZ-Jq5">
+                                    <rect key="frame" x="123.5" y="15" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="LEv-vZ-Jq5" secondAttribute="height" multiplier="1:1" id="ejZ-0W-kUh"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="LEv-vZ-Jq5" firstAttribute="height" secondItem="KsT-W7-2eR" secondAttribute="height" multiplier="34:64" id="Tzj-AF-zMc"/>
+                                <constraint firstAttribute="trailing" secondItem="LEv-vZ-Jq5" secondAttribute="trailing" id="WW0-M0-sg4"/>
+                                <constraint firstItem="LEv-vZ-Jq5" firstAttribute="centerY" secondItem="KsT-W7-2eR" secondAttribute="centerY" id="k73-Ly-QyS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p09-fx-E7K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1B6-Wj-XUi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p09-fx-E7K" secondAttribute="trailing" id="Zp9-Ty-7St"/>
+                <constraint firstAttribute="bottom" secondItem="p09-fx-E7K" secondAttribute="bottom" id="kzo-v6-hG4"/>
+                <constraint firstItem="p09-fx-E7K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lr9-2e-rEx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sontung" width="80" height="80"/>
+    </resources>
+</document>

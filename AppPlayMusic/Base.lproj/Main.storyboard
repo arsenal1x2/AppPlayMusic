@@ -30,56 +30,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-O5-KjL">
                                         <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tle-Yj-rGH">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tle-Yj-rGH" customClass="NavigationBar" customModule="AppPlayMusic" customModuleProvider="target">
                                                 <rect key="frame" x="29.5" y="0.0" width="315" height="64"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9d-fN-KQ6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Tracks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWR-gK-S0t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="XWR-gK-S0t" firstAttribute="leading" secondItem="B9d-fN-KQ6" secondAttribute="leading" id="8UX-Jr-wiA"/>
-                                                            <constraint firstItem="XWR-gK-S0t" firstAttribute="top" secondItem="B9d-fN-KQ6" secondAttribute="top" id="Bl1-Xe-JDd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XWR-gK-S0t" secondAttribute="trailing" id="SKF-E6-6aG"/>
-                                                            <constraint firstAttribute="bottom" secondItem="XWR-gK-S0t" secondAttribute="bottom" id="n38-Fo-TNR"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-22-8Rk">
-                                                        <rect key="frame" x="157.5" y="0.0" width="157.5" height="64"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sontung" translatesAutoresizingMaskIntoConstraints="NO" id="xkt-qE-Ifd">
-                                                                <rect key="frame" x="122.5" y="14.5" width="35" height="35"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="xkt-qE-Ifd" secondAttribute="height" multiplier="1:1" id="JQx-9f-AI3"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="xkt-qE-Ifd" firstAttribute="height" secondItem="AuH-22-8Rk" secondAttribute="height" multiplier="35:64" id="drq-SO-jYb"/>
-                                                            <constraint firstItem="xkt-qE-Ifd" firstAttribute="centerY" secondItem="AuH-22-8Rk" secondAttribute="centerY" id="hqg-h1-GBz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="xkt-qE-Ifd" secondAttribute="trailing" id="ipn-sG-kDq"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="AuH-22-8Rk" firstAttribute="leading" secondItem="B9d-fN-KQ6" secondAttribute="trailing" id="DCe-i4-Kdd"/>
-                                                    <constraint firstItem="B9d-fN-KQ6" firstAttribute="leading" secondItem="tle-Yj-rGH" secondAttribute="leading" id="EHd-JE-2IF"/>
-                                                    <constraint firstItem="B9d-fN-KQ6" firstAttribute="width" secondItem="tle-Yj-rGH" secondAttribute="width" multiplier="1:2" id="OBD-Mm-1tj"/>
-                                                    <constraint firstAttribute="bottom" secondItem="B9d-fN-KQ6" secondAttribute="bottom" id="TrT-Bf-o31"/>
-                                                    <constraint firstItem="B9d-fN-KQ6" firstAttribute="top" secondItem="tle-Yj-rGH" secondAttribute="top" id="U9f-h7-cpv"/>
-                                                    <constraint firstAttribute="bottom" secondItem="AuH-22-8Rk" secondAttribute="bottom" id="n7u-UU-2DT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="AuH-22-8Rk" secondAttribute="trailing" id="y8H-rN-btX"/>
-                                                    <constraint firstItem="AuH-22-8Rk" firstAttribute="top" secondItem="tle-Yj-rGH" secondAttribute="top" id="yLm-FN-Pad"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,7 +100,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="All tracks" image="icons8-music-library-filled " id="5YG-3v-EvG"/>
                     <connections>
-                        <outlet property="avartaImg" destination="xkt-qE-Ifd" id="6Go-Q2-HEW"/>
+                        <outlet property="navigationbarView" destination="tle-Yj-rGH" id="LsN-v2-OWh"/>
                         <outlet property="trackTableView" destination="kxg-nt-ROh" id="V9c-RM-Msp"/>
                     </connections>
                 </viewController>
@@ -173,44 +126,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzc-ej-jxy">
                                         <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ey-dG-3Bi">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ey-dG-3Bi" customClass="NavigationBar" customModule="AppPlayMusic" customModuleProvider="target">
                                                 <rect key="frame" x="29.5" y="0.0" width="315" height="64"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fp-Q4-Orb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYF-Z4-N7N">
-                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="YYF-Z4-N7N" firstAttribute="leading" secondItem="9Fp-Q4-Orb" secondAttribute="leading" id="27R-4j-xgL"/>
-                                                            <constraint firstAttribute="bottom" secondItem="YYF-Z4-N7N" secondAttribute="bottom" id="69g-HK-c1b"/>
-                                                            <constraint firstAttribute="trailing" secondItem="YYF-Z4-N7N" secondAttribute="trailing" id="DXa-8K-FFf"/>
-                                                            <constraint firstItem="YYF-Z4-N7N" firstAttribute="top" secondItem="9Fp-Q4-Orb" secondAttribute="top" id="XvV-sc-5gq"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sontung" translatesAutoresizingMaskIntoConstraints="NO" id="g7c-lq-dvS">
-                                                        <rect key="frame" x="280" y="14.5" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="g7c-lq-dvS" secondAttribute="height" multiplier="1:1" id="OfS-xz-muK"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="9Fp-Q4-Orb" firstAttribute="top" secondItem="9Ey-dG-3Bi" secondAttribute="top" id="WJG-DN-4FE"/>
-                                                    <constraint firstItem="9Fp-Q4-Orb" firstAttribute="width" secondItem="9Ey-dG-3Bi" secondAttribute="width" multiplier="1:2" id="WO5-gH-nY9"/>
-                                                    <constraint firstItem="9Fp-Q4-Orb" firstAttribute="leading" secondItem="9Ey-dG-3Bi" secondAttribute="leading" id="WXy-Kt-Kz2"/>
-                                                    <constraint firstItem="g7c-lq-dvS" firstAttribute="height" secondItem="9Ey-dG-3Bi" secondAttribute="height" multiplier="35:64" id="Xle-Ia-5pn"/>
-                                                    <constraint firstAttribute="bottom" secondItem="9Fp-Q4-Orb" secondAttribute="bottom" id="beR-SB-tcP"/>
-                                                    <constraint firstItem="g7c-lq-dvS" firstAttribute="centerY" secondItem="9Ey-dG-3Bi" secondAttribute="centerY" id="kwh-B0-7tJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="g7c-lq-dvS" secondAttribute="trailing" id="qn2-N3-6eV"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -315,7 +233,7 @@
                         <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="avartaImg" destination="g7c-lq-dvS" id="7Jy-UC-n3G"/>
+                        <outlet property="navigationbarView" destination="9Ey-dG-3Bi" id="8gL-ag-eKt"/>
                         <outlet property="searchbar" destination="Y4A-wd-0Po" id="kA0-ck-O5h"/>
                         <outlet property="songTableView" destination="IgR-Lu-0R6" id="rc2-C8-2r6"/>
                     </connections>
@@ -364,44 +282,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTJ-0o-O7O">
                                         <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gav-Sw-yF5">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gav-Sw-yF5" customClass="NavigationBar" customModule="AppPlayMusic" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="0.0" width="315" height="64"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-IT-oZr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="64"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-fw-MKr">
-                                                        <rect key="frame" x="157.5" y="0.0" width="157.5" height="64"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sontung" translatesAutoresizingMaskIntoConstraints="NO" id="Acf-76-5C0">
-                                                                <rect key="frame" x="122.5" y="14.5" width="35" height="35"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="Acf-76-5C0" secondAttribute="height" multiplier="1:1" id="0mJ-hY-PdT"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Acf-76-5C0" firstAttribute="centerY" secondItem="T3a-fw-MKr" secondAttribute="centerY" id="C0s-EJ-P9J"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Acf-76-5C0" secondAttribute="trailing" id="uLs-Jj-EeD"/>
-                                                            <constraint firstItem="Acf-76-5C0" firstAttribute="height" secondItem="T3a-fw-MKr" secondAttribute="height" multiplier="35:64" id="vc8-iT-a6j"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="T3a-fw-MKr" firstAttribute="leading" secondItem="4yb-IT-oZr" secondAttribute="trailing" id="GWD-Lb-x5c"/>
-                                                    <constraint firstItem="4yb-IT-oZr" firstAttribute="leading" secondItem="gav-Sw-yF5" secondAttribute="leading" id="WsT-yx-qqM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="T3a-fw-MKr" secondAttribute="trailing" id="ZLT-0K-Z7d"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4yb-IT-oZr" secondAttribute="bottom" id="kB6-X6-I0H"/>
-                                                    <constraint firstItem="T3a-fw-MKr" firstAttribute="top" secondItem="gav-Sw-yF5" secondAttribute="top" id="m7f-wE-YRD"/>
-                                                    <constraint firstAttribute="bottom" secondItem="T3a-fw-MKr" secondAttribute="bottom" id="pzN-SO-Gbf"/>
-                                                    <constraint firstItem="4yb-IT-oZr" firstAttribute="width" secondItem="gav-Sw-yF5" secondAttribute="width" multiplier="1:2" id="wfO-7g-EtV"/>
-                                                    <constraint firstItem="4yb-IT-oZr" firstAttribute="top" secondItem="gav-Sw-yF5" secondAttribute="top" id="y7m-vf-QEx"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -505,8 +388,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="IKp-rA-5lN"/>
                     <connections>
-                        <outlet property="avartaImageView" destination="Acf-76-5C0" id="rJo-bv-ZUF"/>
                         <outlet property="categoriesCollectionView" destination="eKp-6C-TvP" id="MTA-cV-rTS"/>
+                        <outlet property="navigationbarView" destination="gav-Sw-yF5" id="jy4-jg-MyV"/>
                         <outlet property="playlistTableView" destination="gWp-jC-xIi" id="NJB-bR-cBD"/>
                         <segue destination="ace-sV-kLR" kind="show" id="GlN-MD-RTL"/>
                     </connections>
