@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct API {
+    static let baseURL = "https://music-api-kp.herokuapp.com/"
+    static let VN = "ranks/songs/nhac-viet"
+}

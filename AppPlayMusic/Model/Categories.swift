@@ -7,8 +7,10 @@
 //
 
 import Foundation
+
 class Categories {
     var name:String
+    
     init(name:String) {
        self.name = name
     }

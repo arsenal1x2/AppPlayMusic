@@ -9,20 +9,17 @@
 import UIKit
 
 class TracksViewController: UIViewController {
-
-
     @IBOutlet weak var navigationbarView: NavigationBar!
     @IBOutlet weak var trackTableView: UITableView!
-    var arrSong:[Song] = [Song]()
+    var listSongs: [Song]!
+    let dataService = DataService.shared
 
-
-    let cellTableViewID = "cellTable"
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        createLoadingView()
         setupTableView()
-        
-
+        setupNavigationBar()
         // Do any additional setup after loading the view.
     }
 
@@ -30,40 +27,54 @@ class TracksViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func loadData() {
-        let arrSongInit = [
-            Song(singer: "Sơn Tùng", name: "Cơn mưa ngang qua",time:"3:05"),
-            Song(singer: "Đan Trường", name: "Mãi mãi một tình yêu",time:"3:23"),
-            Song(singer: "Trương Thế Vinh", name: "Tình yêu hoa gió",time:"3:45"),
-            Song(singer: "The men", name: "Chờ em trong đêm",time:"2:01"),
-            Song(singer: "The men", name: "Chỉ yêu mình em",time:"4:02"),
-            Song(singer: "Nam Cường", name: "Khó",time:"1:58")
-        ]
-        arrSong = arrSongInit.sorted(by: { $0 < $1 })
 
+    func setupNavigationBar() {
+        self.navigationbarView.title.text = "All Tracks"
     }
+
+    func loadData() {
+        dataService.fetchData(url: API.baseURL+API.VN) { (success, error, songs) in
+            if success {
+                DispatchQueue.main.async {
+                    guard let list = songs else { return }
+                    self.listSongs = list
+                    self.listSongs.sort(by: { $0 < $1 })
+                    self.trackTableView.reloadData()
+                    self.dismiss(animated: false, completion: nil)
+                }
+            }
+        }
+    }
+
     func setupTableView() {
+        trackTableView.register(PlaylistTableViewCell.self)
         trackTableView.dataSource = self
         trackTableView.delegate = self
-        trackTableView.register(UINib.init(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: cellTableViewID)
-
     }
 
-
-
+    func createLoadingView() {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = .gray
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
 }
+
+//MARK: UITableViewDataSource
 extension TracksViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrSong.count
+        if listSongs ==  nil { return 1}
+        return listSongs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = trackTableView.dequeueReusableCell(withIdentifier: cellTableViewID, for: indexPath) as! TrackTableViewCell
-        cell.nameSingLbl.text = arrSong[indexPath.row].singer
-        cell.nameSongLbl.text = arrSong[indexPath.row].name
-        cell.timeLbl.text = arrSong[indexPath.row].time
+        if listSongs == nil { return UITableViewCell() }
+        let cell: PlaylistTableViewCell = trackTableView.dequeueResuableCell(forIndexPath: indexPath)
+        let track = listSongs[indexPath.row]
+        cell.configCell(with: track)
         return cell
     }
-
-
 }

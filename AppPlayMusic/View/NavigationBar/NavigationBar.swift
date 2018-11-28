@@ -9,18 +9,20 @@
 import UIKit
 
 class NavigationBar: UIView {
-
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var avartaImg: UIImageView!
     @IBOutlet weak var title: UILabel!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+
     private func commonInit() {
         Bundle.main.loadNibNamed("NavigationBar", owner: self, options: nil)
         self.addSubview(contentView)
@@ -29,5 +31,4 @@ class NavigationBar: UIView {
         avartaImg.layer.cornerRadius = 0.5 * avartaImg.frame.width
         avartaImg.clipsToBounds = true
     }
-
 }

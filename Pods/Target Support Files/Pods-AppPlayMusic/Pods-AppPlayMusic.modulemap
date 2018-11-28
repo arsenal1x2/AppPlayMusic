@@ -1,0 +1,6 @@
+module Pods_AppPlayMusic {
+  umbrella header "Pods-AppPlayMusic-umbrella.h"
+
+  export *
+  module * { export * }
+}

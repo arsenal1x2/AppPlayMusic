@@ -9,26 +9,22 @@
 import UIKit
 
 class BrowserViewController: UIViewController {
-
     @IBOutlet weak var navigationbarView: NavigationBar!
     @IBOutlet weak var songTableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var avartaImg: UIImageView!
     let tableviewCellId = "tableviewCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-       // configureSearchBarTextField()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func setupImageView() {
 
-    }
     func setupTableView() {
         songTableView.dataSource = self
         songTableView.delegate = self
@@ -36,6 +32,7 @@ class BrowserViewController: UIViewController {
     }
 
 }
+
 extension BrowserViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -45,6 +42,4 @@ extension BrowserViewController:UITableViewDataSource,UITableViewDelegate {
         let cell = songTableView.dequeueReusableCell(withIdentifier: tableviewCellId, for:indexPath) as! BrowserTableViewCell
         return cell
     }
-
-
 }
